@@ -57,7 +57,6 @@
         h1 { margin: 0; font-size: 2.2rem; font-weight: 700; }
         .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem; }
         
-        /* Εικονίδια και links επικοινωνίας */
         .contact-links { 
             margin-top: 1.2rem; 
             display: flex; 
@@ -107,7 +106,7 @@
     <header>
         <img src="skotidis.png" alt="Stefanos Kotidis">
         <h1>Stefanos Kotidis</h1>
-        <div class="subtitle">Management Science & Technology Undergraduate @ AUEB | Software Engineering & Data Systems</div>
+        <div class="subtitle">Management Science & Technology Undergraduate @ AUEB</div>
         <div class="contact-links">
             <a href="mailto:stefkotidis@gmail.com">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -126,21 +125,21 @@
 
     <section>
         <h2>About Me</h2>
-        <p>Management Science and Technology undergraduate focusing on software engineering, data systems, and object-oriented programming. Active researcher specializing in large-scale data analytics and AI-agent infrastructures. Passionate about building robust, scalable system architectures using C++, Java, and Python.</p>
+        <p>Management Science and Technology undergraduate focusing on software engineering and data systems. Currently involved in academic research around data analytics and software engineering metrics. Interested in building reliable backend systems and working with different programming paradigms.</p>
     </section>
 
     <section>
         <h2>Research Experience</h2>
         <div class="item">
             <div class="item-header">
-                <div class="item-title">Researcher & Co-Author</div>
+                <div class="item-title">Student Researcher</div>
                 <div class="item-meta">July 2026 – Present</div>
             </div>
-            <div class="item-meta">Business Analytics Laboratory (BALab), AUEB | Athens, Greece</div>
+            <div class="item-meta">Business Analytics Laboratory (BALab), AUEB</div>
             <ul>
-                <li>Collaborating with Prof. D. Spinellis on large-scale data extraction and software engineering analytics.</li>
-                <li>Executing complex SQL queries on distributed query engines (Amazon Athena, Trino) to analyze the Software Heritage Graph Dataset.</li>
-                <li>Configuring Python data pipelines and handling data conversions for upcoming academic publications.</li>
+                <li>Working on data extraction and software engineering analytics under Prof. D. Spinellis.</li>
+                <li>Using SQL and distributed query engines (Amazon Athena, Trino) to analyze large datasets.</li>
+                <li>Building Python data pipelines for academic research.</li>
             </ul>
         </div>
     </section>
@@ -153,18 +152,18 @@
                 <div class="item-meta">Python, REST API, JSON</div>
             </div>
             <ul>
-                <li>Developed a Python engine leveraging the GitHub REST API to programmatically fetch, parse, and analyze repository commit data.</li>
-                <li>Engineered string-matching logic and keyword filters to quantify bug-fixing activity across large-scale codebases.</li>
+                <li>Developed a Python tool using the GitHub REST API to fetch and analyze commit data.</li>
+                <li>Implemented filtering logic to track specific repository activities and bug fixes.</li>
             </ul>
         </div>
         
         <div class="item">
             <div class="item-header">
                 <div class="item-title">Hellenic Infographics</div>
-                <div class="item-meta">React, JavaScript, Vercel</div>
+                <div class="item-meta">React, JavaScript</div>
             </div>
             <ul>
-                <li>Co-developed a responsive Single-Page Application (SPA) visualizing macroeconomic data, managing dynamic state via React hooks.</li>
+                <li>Co-developed a web application for visualizing macroeconomic data using React.</li>
             </ul>
         </div>
     </section>
@@ -172,14 +171,14 @@
     <section>
         <h2>Skills</h2>
         <div class="skills-container">
-            <span class="skill-tag">C++</span>
             <span class="skill-tag">Java</span>
             <span class="skill-tag">Python</span>
             <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Git / GitHub</span>
             <span class="skill-tag">JavaScript</span>
             <span class="skill-tag">Bash</span>
-            <span class="skill-tag">Git / GitHub</span>
             <span class="skill-tag">Amazon Athena</span>
+            <span class="skill-tag">C++</span>
             <span class="skill-tag">OOP</span>
         </div>
     </section>
@@ -208,4 +207,44 @@
             }
         }
 
-        function animate()
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, width, height);
+            
+            ctx.fillStyle = '#d0d0d0';
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                if (p.x < 0 || p.x > width) p.vx *= -1;
+                if (p.y < 0 || p.y > height) p.vy *= -1;
+                
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fill();
+            });
+
+            ctx.strokeStyle = '#e0e0e0';
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < 130) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.lineWidth = 0.8 - (dist / 130);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('resize', init);
+        init();
+        animate();
+    </script>
+</body>
+</html>
