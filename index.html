@@ -16,13 +16,35 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: var(--text-main);
-            background-color: var(--bg-color);
+            background-color: transparent;
             max-width: 800px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
+            position: relative;
         }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        
+        /* Chill Nodes Background */
+        #network-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: var(--bg-color);
+        }
+
+        header, section {
+            background: rgba(255, 255, 255, 0.85);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s;}
+        a:hover { color: #004c9e; }
+        
         header { text-align: center; margin-bottom: 3.5rem; }
         header img {
             width: 160px;
@@ -34,12 +56,30 @@
         }
         h1 { margin: 0; font-size: 2.2rem; font-weight: 700; }
         .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem; }
-        .contact-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; }
+        
+        /* Εικονίδια και links επικοινωνίας */
+        .contact-links { 
+            margin-top: 1.2rem; 
+            display: flex; 
+            justify-content: center; 
+            gap: 1.8rem; 
+        }
+        .contact-links a {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-weight: 500;
+        }
+        .contact-links svg {
+            width: 18px;
+            height: 18px;
+        }
+
         h2 { 
             font-size: 1.4rem; 
             border-bottom: 2px solid var(--border); 
             padding-bottom: 0.5rem; 
-            margin-top: 2.5rem; 
+            margin-top: 1rem; 
             margin-bottom: 1.5rem;
         }
         .item { margin-bottom: 2rem; }
@@ -56,25 +96,37 @@
             border-radius: 6px;
             font-size: 0.9rem;
             color: #555;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
     </style>
 </head>
 <body>
 
+    <canvas id="network-canvas"></canvas>
+
     <header>
         <img src="skotidis.png" alt="Stefanos Kotidis">
         <h1>Stefanos Kotidis</h1>
-        <div class="subtitle">Computer Science Undergraduate @ AUEB | Software Engineer</div>
+        <div class="subtitle">Management Science & Technology Undergraduate @ AUEB | Software Engineering & Data Systems</div>
         <div class="contact-links">
-            <a href="mailto:stefkotidis@gmail.com">Email</a>
-            <a href="https://github.com/stefkotidis-prog" target="_blank">GitHub</a>
-            <a href="#" target="_blank">LinkedIn</a>
+            <a href="mailto:stefkotidis@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                Email
+            </a>
+            <a href="https://github.com/stefkotidis-prog" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/stefanos-kotidis-a936203b0/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                LinkedIn
+            </a>
         </div>
     </header>
 
     <section>
         <h2>About Me</h2>
-        <p>Computer Science undergraduate with a strong foundation in software engineering, data structures, and object-oriented programming. Active researcher focusing on large-scale data analytics and AI-agent infrastructures. Passionate about building robust, scalable system architectures using C++, Java, and Python.</p>
+        <p>Management Science and Technology undergraduate focusing on software engineering, data systems, and object-oriented programming. Active researcher specializing in large-scale data analytics and AI-agent infrastructures. Passionate about building robust, scalable system architectures using C++, Java, and Python.</p>
     </section>
 
     <section>
@@ -132,5 +184,28 @@
         </div>
     </section>
 
-</body>
-</html>
+    <script>
+        const canvas = document.getElementById('network-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function init() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            particles = [];
+            
+            const numParticles = width < 768 ? 30 : 60;
+
+            for (let i = 0; i < numParticles; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.8,
+                    vy: (Math.random() - 0.5) * 0.8,
+                    radius: Math.random() * 1.5 + 1
+                });
+            }
+        }
+
+        function animate()
