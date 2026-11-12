@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stefanos Kotidis | Portfolio</title>
+    <style>
+        /* Καθαρό και σύγχρονο styling */
+        :root {
+            --bg-color: #fafafa;
+            --text-main: #333333;
+            --text-muted: #666666;
+            --accent: #0366d6;
+            --border: #eaeaea;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        header { text-align: center; margin-bottom: 3.5rem; }
+        header img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2.2rem; font-weight: 700; }
+        .subtitle { color: var(--text-muted); font-size: 1.1rem; margin-top: 0.5rem; }
+        .contact-links { margin-top: 1rem; display: flex; justify-content: center; gap: 1.5rem; }
+        h2 { 
+            font-size: 1.4rem; 
+            border-bottom: 2px solid var(--border); 
+            padding-bottom: 0.5rem; 
+            margin-top: 2.5rem; 
+            margin-bottom: 1.5rem;
+        }
+        .item { margin-bottom: 2rem; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .item-title { font-weight: 600; font-size: 1.1rem; }
+        .item-meta { color: var(--text-muted); font-size: 0.95rem; }
+        ul { margin-top: 0.5rem; padding-left: 1.5rem; color: #444; }
+        li { margin-bottom: 0.4rem; }
+        .skills-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+        .skill-tag {
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="skotidis.png" alt="Stefanos Kotidis">
+        <h1>Stefanos Kotidis</h1>
+        <div class="subtitle">Computer Science Undergraduate @ AUEB | Backend Developer</div>
+        <div class="contact-links">
+            <a href="mailto:stefkotidis@gmail.com">Email</a>
+            <a href="https://github.com/stefkotidis-prog" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>Computer Science undergraduate with a strong foundation in backend software engineering, data structures, and object-oriented programming. Active researcher focusing on large-scale data analytics and AI-agent infrastructures. Passionate about building robust, scalable system architectures using C++, Java, and Python.</p>
+    </section>
+
+    <section>
+        <h2>Research Experience</h2>
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Researcher & Co-Author</div>
+                <div class="item-meta">July 2026 – Present</div>
+            </div>
+            <div class="item-meta">Business Analytics Laboratory (BALab), AUEB | Athens, Greece</div>
+            <ul>
+                <li>Collaborating with Prof. D. Spinellis on large-scale data extraction and software engineering analytics.</li>
+                <li>Executing complex SQL queries on distributed query engines (Amazon Athena, Trino) to analyze the Software Heritage Graph Dataset.</li>
+                <li>Configuring Python data pipelines and handling data conversions for upcoming academic publications.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Projects</h2>
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">GitHub Commit Analyzer</div>
+                <div class="item-meta">Python, REST API, JSON</div>
+            </div>
+            <ul>
+                <li>Developed a Python engine leveraging the GitHub REST API to programmatically fetch, parse, and analyze repository commit data.</li>
+                <li>Engineered string-matching logic and keyword filters to quantify bug-fixing activity across large-scale codebases.</li>
+            </ul>
+        </div>
+        
+        <div class="item">
+            <div class="item-header">
+                <div class="item-title">Hellenic Infographics</div>
+                <div class="item-meta">React, JavaScript, Vercel</div>
+            </div>
+            <ul>
+                <li>Co-developed a responsive Single-Page Application (SPA) visualizing macroeconomic data, managing dynamic state via React hooks.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Bash</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Amazon Athena</span>
+            <span class="skill-tag">OOP</span>
+        </div>
+    </section>
+
+</body>
+</html>
