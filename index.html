@@ -211,7 +211,8 @@
             requestAnimationFrame(animate);
             ctx.clearRect(0, 0, width, height);
             
-            ctx.fillStyle = '#d0d0d0';
+            // Το χρώμα των κόμβων (nodes) άλλαξε σε σκούρο μπλε
+            ctx.fillStyle = '#0f2b5b'; 
             particles.forEach(p => {
                 p.x += p.vx;
                 p.y += p.vy;
