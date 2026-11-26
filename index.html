@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stefanos Kotidis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #f8f8f6;
@@ -14,8 +17,8 @@
             --accent: #6d2024;
             --accent-hover: #4e1518;
             --code-bg: #ecece6;
-            --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --mono: 'IBM Plex Mono', monospace;
+            --sans: 'IBM Plex Sans', sans-serif;
         }
 
         [data-theme="dark"] {
@@ -89,7 +92,7 @@
 
         .brand {
             color: var(--text);
-            font-weight: 600;
+            font-weight: 500;
             letter-spacing: -0.02em;
         }
 
@@ -152,7 +155,7 @@
             margin: 0;
             font-size: 2rem;
             font-weight: 700;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             line-height: 1.2;
         }
 
@@ -160,7 +163,7 @@
             margin-top: 0.45rem;
             color: var(--muted);
             font-family: var(--mono);
-            font-size: 0.88rem;
+            font-size: 0.86rem;
         }
 
         .hero-bio {
@@ -174,7 +177,7 @@
             flex-wrap: wrap;
             gap: 1.25rem;
             font-family: var(--mono);
-            font-size: 0.85rem;
+            font-size: 0.84rem;
         }
 
         .hero-links a {
@@ -218,8 +221,8 @@
         h2 {
             margin: 0;
             font-family: var(--mono);
-            font-size: 0.92rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.06em;
             color: var(--accent);
@@ -262,7 +265,7 @@
 
         .entry-meta {
             font-family: var(--mono);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--muted);
         }
 
@@ -325,7 +328,7 @@
 
         .skill-cat {
             font-family: var(--mono);
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--muted);
             padding-top: 0.1rem;
         }
@@ -397,7 +400,7 @@
                 <h1>Stefanos Kotidis</h1>
                 <div class="hero-role">BSc Management Science & Technology @ AUEB</div>
                 <p class="hero-bio">
-                    Undergraduate focusing on software engineering and data systems. Currently involved in academic research around large-scale software analytics and data pipelines. Interested in backend systems, static analysis, and low-level data structures.
+                    Undergraduate focusing on software engineering and data systems. Currently involved in academic research around large-scale software analytics, data pipelines, and virtual data layers. Interested in backend systems, static analysis, and low-level data structures.
                 </p>
                 <div class="hero-links">
                     <a href="mailto:stefkotidis@gmail.com">
@@ -421,9 +424,22 @@
             <div class="section-head">
                 <h2><span class="section-index">01</span>Research Experience</h2>
             </div>
+
             <div class="entry">
                 <div class="entry-top">
-                    <div class="entry-title">Student Researcher</div>
+                    <div class="entry-title">Student Researcher — Data Systems</div>
+                    <div class="entry-meta">Nov 2026 – Present</div>
+                </div>
+                <div class="entry-sub">Department of Management Science & Technology, AUEB</div>
+                <ul>
+                    <li>Collaborating with Prof. D. Chatziantoniou on research around Data Virtual Machines (DVMs) and virtual data layers.</li>
+                    <li>Exploring new use cases and system architectures for DVMs beyond dataframe-oriented workflows.</li>
+                </ul>
+            </div>
+
+            <div class="entry">
+                <div class="entry-top">
+                    <div class="entry-title">Student Researcher — Software Analytics</div>
                     <div class="entry-meta">Jul 2026 – Present</div>
                 </div>
                 <div class="entry-sub">Business Analytics Laboratory (BALab), AUEB</div>
@@ -431,8 +447,6 @@
                     <li>Working on large-scale repository mining and software engineering analytics under Prof. D. Spinellis.</li>
                     <li>Querying the Software Heritage dataset using SQL on distributed engines (Amazon Athena, Trino).</li>
                     <li>Building Python extraction and conversion pipelines for empirical research.</li>
-                    <li>Working on research around Data Virtual Machines (DVMs) and virtual data layers.</li>
-                    <li>Exploring new use cases and system architectures for DVMs beyond dataframe-oriented workflows.</li>
                 </ul>
             </div>
         </section>
